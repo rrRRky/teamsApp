@@ -35,7 +35,12 @@ const TeamsApp: React.FC = () => {
     <div>
       <h2>Welcome to Teams App</h2>
       {userInfo ? (
-        <p>User: {userInfo.userPrincipalName} ({userInfo.id})</p>
+        <>
+        <h3>User detail</h3>
+        <p>User Email Id: {userInfo.userPrincipalName}</p>
+        <p>User Teams Id: ({userInfo.id})</p>
+        {console.log("User:" , userInfo)}
+        </>
         
       ) : (
         <p>Loading user info...</p>
