@@ -4,6 +4,8 @@ import * as microsoftTeams from "@microsoft/teams-js";
 interface UserInfo {
   displayName?: string;
   id?: string;
+  loginHint?: string;
+  userPrincipalName?: string;
 }
 
 const TeamsApp: React.FC = () => {
@@ -33,7 +35,8 @@ const TeamsApp: React.FC = () => {
     <div>
       <h2>Welcome to Teams App</h2>
       {userInfo ? (
-        <p>User: {userInfo.displayName} ({userInfo.id})</p>
+        <p>User: {userInfo.userPrincipalName} ({userInfo.id})</p>
+        
       ) : (
         <p>Loading user info...</p>
       )}
